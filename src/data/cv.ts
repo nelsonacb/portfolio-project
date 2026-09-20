@@ -1,7 +1,7 @@
 import type { Locale } from '../i18n/utils';
 
-import cvEs from '../assets/CV/Nelson_CV_Spanish.pdf?url';
-import cvEn from '../assets/CV/Nelson_CV_English.pdf?url';
+import cvEs from '../assets/CV/CV_Nelson_English.pdf?url';
+import cvEn from '../assets/CV/CV_Nelson_Spanish.pdf?url';
 
 export const cvFiles: Record<Locale, string> = {
   es: cvEs,
