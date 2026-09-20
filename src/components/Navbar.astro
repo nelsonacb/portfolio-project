@@ -1,0 +1,146 @@
+---
+import LanguageSwitcher from './LanguageSwitcher.astro';
+import ThemeToggle from './ThemeToggle.astro'; 
+import { useTranslations } from '../i18n/utils';
+import type { Locale } from '../i18n/utils';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const { t } = useTranslations(locale);
+
+
+const currentPath =
+  Astro.url.pathname.replace(new RegExp(`^/${locale}(?=/|$)`), '') || '/';
+
+const navItems = [
+  { key: 'home', href: '#hero' },
+  { key: 'about', href: '#about' },
+  { key: 'projects', href: '#projects' },
+  { key: 'technologies', href: '#technologies' },
+  { key: 'contact', href: '#contact' },
+] as const;
+---
+
+<nav class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <a href={locale === 'es' ? '/' : '/en/'} class="text-xl font-bold text-primary">
+        MiPortafolio
+      </a>
+
+      <div class="hidden md:flex items-center space-x-8">
+        {
+          navItems.map((item) => (
+            <a
+              href={item.href}
+              class="text-sm font-medium hover:text-primary transition-colors"
+            >
+              {t.nav[item.key as keyof typeof t.nav]}
+            </a>
+          ))
+        }
+      </div>
+
+      <div class="hidden md:flex items-center space-x-4">
+        <LanguageSwitcher currentLocale={locale} currentPath={currentPath} />
+        <ThemeToggle />
+      </div>
+
+      <div class="md:hidden flex items-center gap-2 space-x-2">
+        <ThemeToggle />
+        <button
+          id="mobile-menu-toggle"
+          type="button"
+          class="p-2 rounded-lg bg-muted hover:bg-muted/80 transition-colors"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <svg
+            id="icon-menu"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+          <svg
+            id="icon-close"
+            class="hidden"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div id="mobile-menu" class="hidden md:hidden bg-background border-t">
+    <div class="px-4 pt-2 pb-4 space-y-2">
+      {
+        navItems.map((item) => (
+          <a
+            href={item.href}
+            class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium hover:bg-muted transition-colors"
+          >
+            {t.nav[item.key as keyof typeof t.nav]}
+          </a>
+        ))
+      }
+      <div class="pt-2">
+        <LanguageSwitcher currentLocale={locale} currentPath={currentPath} />
+      </div>
+    </div>
+  </div>
+</nav>
+
+<script>
+  const toggle = document.getElementById('mobile-menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+  const iconMenu = document.getElementById('icon-menu');
+  const iconClose = document.getElementById('icon-close');
+
+  function closeMenu() {
+    menu?.classList.add('hidden');
+    iconMenu?.classList.remove('hidden');
+    iconClose?.classList.add('hidden');
+    toggle?.setAttribute('aria-expanded', 'false');
+  }
+
+  toggle?.addEventListener('click', () => {
+    const isOpen = !menu?.classList.contains('hidden');
+    if (isOpen) {
+      closeMenu();
+    } else {
+      menu?.classList.remove('hidden');
+      iconMenu?.classList.add('hidden');
+      iconClose?.classList.remove('hidden');
+      toggle.setAttribute('aria-expanded', 'true');
+    }
+  });
+
+  document.querySelectorAll('.mobile-nav-link').forEach((link) => {
+    link.addEventListener('click', closeMenu);
+  });
+</script>

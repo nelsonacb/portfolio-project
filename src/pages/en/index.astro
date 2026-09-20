@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import ProjectCard from '../../components/sections/Projects.astro';
+import Technologies from '../../components/sections/Technologies.astro';
+import Footer from '../../components/Footer.astro';
+import Hero from '../../components/sections/Hero.astro';
+import About from '../../components/sections/About.astro';
+import Contact from '../../components/sections/Contact.astro';
+
+const locale = 'en';
+
+---
+
+<BaseLayout title="My Portfolio | Full Stack Developer" locale="en">
+  <Navbar locale={locale} />
+  <main class="pt-16">
+    <Hero locale={locale} />
+    <About locale={locale} />
+	  <ProjectCard locale={locale} />
+    <Technologies locale={locale} />
+    <Contact locale={locale} />
+  </main>
+  <Footer locale={locale} />
+</BaseLayout>

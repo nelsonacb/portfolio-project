@@ -1,0 +1,33 @@
+---
+import { getRelativeLocaleUrl } from 'astro:i18n';
+
+interface Props {
+  currentLocale: string;
+  currentPath: string;
+}
+
+const { currentLocale, currentPath } = Astro.props;
+const locales = [
+  { code: 'es', label: 'ES' },
+  { code: 'en', label: 'EN' },
+];
+---
+
+<div class="flex gap-1">
+  {locales.map((lang) => {
+    const path = getRelativeLocaleUrl(lang.code, currentPath);
+    return (
+      <a
+        href={path}
+        class:list={[
+          'px-3 py-1 rounded-md text-sm font-medium transition-colors',
+          currentLocale === lang.code
+            ? 'bg-primary text-white'
+            : 'bg-muted hover:bg-muted/80'
+        ]}
+      >
+        {lang.label}
+      </a>
+    );
+  })}
+</div>

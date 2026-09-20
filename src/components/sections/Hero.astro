@@ -1,0 +1,62 @@
+---
+import DownloadCV from '../DownloadCV.astro';
+import { useTranslations } from '../../i18n/utils';
+import type { Locale } from '../../i18n/utils';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const { t } = useTranslations(locale);
+---
+
+<section id="hero" class="min-h-[calc(100vh-4rem)] flex items-center justify-center px-4">
+  <div class="max-w-3xl text-center">
+    <p class="text-sm font-medium text-primary mb-3 tracking-wider uppercase">
+      {t.hero.greeting}
+    </p>
+
+    <h1 class="text-4xl md:text-6xl font-bold mb-4 leading-tight">
+      Nelson Alejandro
+    </h1>
+
+    <p class="text-xl md:text-2xl text-muted-foreground mb-3">
+      {t.hero.role}
+    </p>
+
+    <p class="text-base md:text-lg text-muted-foreground mb-8 max-w-xl mx-auto">
+      {t.hero.description}
+    </p>
+
+    <div class="flex flex-wrap items-center justify-center gap-3">
+      <DownloadCV locale={locale} variant="primary" />
+
+      <a
+        href="#projects"
+        class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg
+               font-medium border border-border bg-transparent text-foreground
+               hover:border-primary hover:text-primary hover:-translate-y-0.5
+               focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2
+               transition-all duration-200"
+      >
+        {t.hero.viewProjects}
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>

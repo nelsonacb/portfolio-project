@@ -1,0 +1,40 @@
+---
+import { projects } from '../../data/projects';
+import ProjectCard from '../projects/ProjectCard.astro';
+import { getProjectText } from '../../i18n/projects';
+import { useTranslations } from '../../i18n/utils';
+import type { Locale } from '../../i18n/utils';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const { t } = useTranslations(locale);
+---
+
+<section id="projects" class="py-20 px-4">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+      {t.projects.title}
+    </h2>
+
+    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        projects.map((project) => {
+          const { title, description } = getProjectText(locale, project.id);
+
+          return (
+            <ProjectCard
+              name={title}
+              description={description}
+              image={project.image}
+              githubUrl={project.githubUrl}
+              viewCodeLabel={t.projects.viewCode}
+            />
+          );
+        })
+      }
+    </div>
+  </div>
+</section>

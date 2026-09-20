@@ -1,0 +1,100 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "technologies": "Technologies",
+    "contact": "Contact"
+  },
+  "projects": {
+    "title": "Projects",
+    "viewCode": "View Code",
+    "items": {
+      "project_1": {
+        "title": "Inventory Management System",
+        "description": "Complete stock control application for small businesses. Dashboard with KPIs, product and category CRUD, inbound/outbound movements, low stock alerts, QR code generation with scanner, and reports with charts and CSV export."
+      },
+      "project_2": {
+        "title": "Chilao Terraza - Bar Restaurant Website",
+        "description": "Production website for a bar restaurant. Displays products with categories, prices, and descriptions. Includes a separate admin panel to manage prices, products, and categories. Paid project currently in active use by the business."
+      },
+      "project_3": {
+        "title": "Private Home",
+        "description": "REST API for managing tourist accommodations of the private home type in Cuba. This backend is built with Django and Django REST Framework, and includes JWT authentication, roles, permissions, advanced filters, and interactive documentation."
+      },
+      "project_4": {
+        "title": "Kanban Project",
+        "description": "Allows task management and changing status as needed."
+      },
+      "project_5": {
+        "title": "CryptoTracker",
+        "description": "Enables viewing cryptocurrency information, current prices, etc."
+      },
+      "project_6": {
+        "title": "Movies Site",
+        "description": "It allows you to view information about movies or series, you can also search or mark movies or series as favorites."
+      },
+      "project_7": {
+        "title": "Rock, Paper, Scissors",
+        "description": "Real-time Rock, Paper, Scissors video game using web sockets."
+      },
+      "project_8": {
+        "title": "GitHub Profile README Generator",
+        "description": "A visual generator to create an amazing README.md for your GitHub profile."
+      },
+      "project_9": {
+        "title": "DevMatch - Memory Challenge",
+        "description": "A developer-themed memory card game. Match pairs of tech stack cards, build combos, and compete on the global leaderboard!"
+      },
+      "project_10": {
+        "title": "Background Remover",
+        "description": "Allows uploading an image and obtaining a copy with the background removed."
+      }
+    }
+  },
+  "technologies": {
+    "title": "Technologies",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "others": "Others"
+  },
+  "about": {
+    "title": "About Me",
+    "subtitle": "A little about who I am and what I do",
+    "photoAlt": "Profile photo",
+    "bio1": "I'm a <strong>Full Stack Developer</strong> passionate about building modern, fast, and accessible web applications. I love turning ideas into functional and well-designed products.",
+    "bio2": "I enjoy working with technologies like <strong>React</strong>, <strong>React</strong>, <strong>Node.js</strong> and <strong>Django</strong>, always looking to learn something new and improve the user experience in every project.",
+    "highlight1": "Clean and maintainable code",
+    "highlight2": "Focus on performance and accessibility",
+    "highlight3": "Teamwork and communication",
+    "highlight4": "Continuous learning",
+    "stats": {
+      "experience": "Years of experience",
+      "projects": "Projects completed",
+      "technologies": "Technologies mastered"
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "description": "Have a project in mind or just want to say hi? Reach out through any of these channels.",
+    "phone": "Phone",
+    "email": "Email",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "cta": "Prefer to email me directly?",
+    "sendEmail": "Send email"
+  },
+  "cv": {
+    "download": "Download CV",
+    "ariaLabel": "Download CV in English as PDF"
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "role": "Full Stack Developer",
+    "description": "I build modern, fast, and accessible web experiences.",
+    "viewProjects": "View projects"
+  },
+  "footer": {
+    "rights": "All rights reserved"
+  }
+}
