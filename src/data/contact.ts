@@ -12,5 +12,5 @@ export const contactInfo: ContactInfo = {
   github: 'https://github.com/nelsonacb',
 };
 
-import aboutPhoto from '../assets/img/Me.png';
+import aboutPhoto from '../assets/img/Me.jpg';
 export { aboutPhoto };
