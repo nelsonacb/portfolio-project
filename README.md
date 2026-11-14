@@ -1,52 +1,52 @@
-# 🚀 Portafolio Personal
+# 🚀 Personal Portfolio
 
-Portafolio web personal moderno, bilingüe (Español / Inglés) y con soporte para modo claro/oscuro. Construido con **Astro**, **React**, **Tailwind CSS v4** y **TypeScript**, con un fuerte enfoque en rendimiento, accesibilidad y buenas prácticas.
-
----
-
-## ✨ Características
-
-- 🌍 **Multiidioma (i18n)** — Español e Inglés con enrutamiento nativo de Astro (`/` y `/en/`).
-- 🌗 **Modo claro / oscuro** — Sin flash de contenido (anti-FOUC), persistencia en `localStorage` y respeto por la preferencia del sistema.
-- 📱 **Diseño responsive** — Navbar adaptable con menú móvil, secciones optimizadas para todos los tamaños de pantalla.
-- 🖼️ **Imágenes optimizadas** — Uso del componente `<Image />` de Astro para servir WebP/AVIF con `srcset` y `loading="lazy"`.
-- 📄 **Descarga de CV** — Botón bilingüe que sirve automáticamente el PDF correcto según el idioma activo.
-- ⚡ **Rendimiento excepcional** — Arquitectura de islas: casi todo el sitio se renderiza en el servidor con **0 KB de JS** por sección.
-- ♿ **Accesibilidad** — Navegación por teclado, `aria-label` en elementos interactivos, contraste de color adecuado.
-- 🔍 **SEO-friendly** — HTML semántico, metadatos y títulos por idioma.
+Modern, bilingual (Spanish / English) personal portfolio website with light/dark mode support. Built with **Astro**, **React**, **Tailwind CSS v4**, and **TypeScript**, with a strong focus on performance, accessibility, and best practices.
 
 ---
 
-## 🧩 Secciones del sitio
+## ✨ Features
 
-| Sección         | Descripción                                                                      |
-| --------------- | -------------------------------------------------------------------------------- |
-| **Hero**        | Presentación personal con CTA de descarga de CV y acceso rápido a proyectos.     |
-| **Sobre mí**    | Biografía, puntos destacados y estadísticas profesionales.                       |
-| **Proyectos**   | Tarjetas con imagen, descripción, tecnologías y enlace al repositorio de GitHub. |
-| **Tecnologías** | Clasificadas por Frontend, Backend y Otras, con logos e interacción al hover.    |
-| **Contacto**    | Tarjetas clickeables con teléfono, email, LinkedIn y GitHub.                     |
-| **Footer**      | Redes sociales, copyright y atribución de tecnologías.                           |
+- 🌍 **Multilingual (i18n)** — Spanish and English with Astro's native routing (`/` and `/en/`).
+- 🌗 **Light / dark mode** — No flash of unstyled content (anti-FOUC), persisted in `localStorage`, and respects the system preference.
+- 📱 **Responsive design** — Adaptive navbar with a mobile menu and sections optimized for all screen sizes.
+- 🖼️ **Optimized images** — Uses Astro's `<Image />` component to serve WebP/AVIF with `srcset` and `loading="lazy"`.
+- 📄 **CV download** — Bilingual button that automatically serves the correct PDF based on the active language.
+- ⚡ **Exceptional performance** — Islands architecture: almost the entire site is server-rendered with **0 KB of JS** per section.
+- ♿ **Accessibility** — Keyboard navigation, `aria-label` on interactive elements, and adequate color contrast.
+- 🔍 **SEO-friendly** — Semantic HTML, metadata, and per-language titles.
 
 ---
 
-## 🛠️ Stack Tecnológico
+## 🧩 Site sections
+
+| Section          | Description                                                                       |
+| ---------------- | --------------------------------------------------------------------------------- |
+| **Hero**         | Personal introduction with a CV download CTA and quick access to projects.        |
+| **About me**     | Biography, highlights, and professional statistics.                               |
+| **Projects**     | Cards with image, description, technologies, and a link to the GitHub repository. |
+| **Technologies** | Grouped by Frontend, Backend, and Other, with logos and hover interactions.       |
+| **Contact**      | Clickable cards with phone, email, LinkedIn, and GitHub.                          |
+| **Footer**       | Social links, copyright, and technology attribution.                              |
+
+---
+
+## 🛠️ Tech Stack
 
 ### Core
 
-- **[Astro](https://astro.build/)** — Framework principal, generación de sitio estático (SSG) y arquitectura de islas.
-- **[React](https://react.dev/)** — Para componentes que requieren interactividad puntual.
-- **[TypeScript](https://www.typescriptlang.org/)** — Tipado estricto en todo el proyecto.
-- **[Tailwind CSS v4](https://tailwindcss.com/)** — Estilos utility-first con tokens de tema personalizados.
+- **[Astro](https://astro.build/)** — Main framework, static site generation (SSG), and islands architecture.
+- **[React](https://react.dev/)** — For components that require targeted interactivity.
+- **[TypeScript](https://www.typescriptlang.org/)** — Strict typing across the entire project.
+- **[Tailwind CSS v4](https://tailwindcss.com/)** — Utility-first styling with custom theme tokens.
 
-### Librerías y herramientas
+### Libraries and tools
 
-- **[@astrojs/react](https://docs.astro.build/en/guides/integrations-guide/react/)** — Integración de React en Astro.
-- **[@tailwindcss/vite](https://tailwindcss.com/docs/installation/using-vite)** — Plugin oficial de Tailwind v4 para Vite.
-- **astro:assets** — Optimización automática de imágenes.
+- **[@astrojs/react](https://docs.astro.build/en/guides/integrations-guide/react/)** — React integration for Astro.
+- **[@tailwindcss/vite](https://tailwindcss.com/docs/installation/using-vite)** — Official Tailwind v4 plugin for Vite.
+- **astro:assets** — Automatic image optimization.
 
-### Estructura y arquitectura
+### Structure and architecture
 
-- **i18n nativo de Astro** — Enrutamiento multiidioma con `getRelativeLocaleUrl`.
-- **Vanilla JS** para el toggle de tema (sin frameworks, sin FOUC).
-- **Componentes `.astro`** como unidad principal para renderizado en servidor.
+- **Astro's native i18n** — Multilingual routing with `getRelativeLocaleUrl`.
+- **Vanilla JS** for the theme toggle (no frameworks, no FOUC).
+- **`.astro` components** as the main unit for server-side rendering.
